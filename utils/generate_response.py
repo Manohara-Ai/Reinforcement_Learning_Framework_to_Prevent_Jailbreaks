@@ -18,11 +18,11 @@ def generate_response(prompt):
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
     outputs = model.generate(
         **inputs,
-        max_new_tokens=gen_cfg.get("max_new_tokens", 256),
-        temperature=gen_cfg.get("temperature", 0.7),
-        top_p=gen_cfg.get("top_p", 0.9),
-        repetition_penalty=gen_cfg.get("repetition_penalty", 1.0),
-        do_sample=gen_cfg.get("do_sample", True),
-        pad_token_id=tokenizer.eos_token_id if gen_cfg.get("pad_token_as_eos", False) else None
+        max_new_tokens=gen_cfg.get("max_new_tokens"),
+        temperature=gen_cfg.get("temperature"),
+        top_p=gen_cfg.get("top_p"),
+        repetition_penalty=gen_cfg.get("repetition_penalty"),
+        do_sample=gen_cfg.get("do_sample"),
+        pad_token_id=tokenizer.eos_token_id if gen_cfg.get("pad_token_as_eos") else None
     )
     return tokenizer.decode(outputs[0], skip_special_tokens=True)

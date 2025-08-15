@@ -2,11 +2,3 @@ model:
   # Path to local model or Hugging Face model name
   path: "/home/manohara/Draconix/Models/DistilBERT" 
 
-# Text generation settings for controlling LLM output style and randomness
-classification:
-  max_new_tokens: 256
-  temperature: 0.7
-  top_p: 0.9
-  repetition_penalty: 1.9
-  do_sample: true
-  pad_token_as_eos: true

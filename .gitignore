@@ -208,6 +208,7 @@ __marimo__/
 
 # Fine-tuned Models
 Finetuned_DistilBert/
+sentiment_model/
 
 test.py
 tests.py

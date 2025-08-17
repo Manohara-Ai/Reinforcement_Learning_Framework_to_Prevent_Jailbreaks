@@ -209,8 +209,5 @@ __marimo__/
 # Fine-tuned Models
 Finetuned_DistilBert/
 
-# dataset
-datasets/
-
 test.py
 tests.py

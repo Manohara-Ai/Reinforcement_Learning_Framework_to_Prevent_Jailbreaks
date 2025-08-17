@@ -17,7 +17,7 @@ class Agent:
         self.memory = deque(maxlen=MAX_MEMORY) 
         self.model = Linear_QNet(3076, 256, 3)
 
-        model_path = r'model\Classic Model.pth'
+        model_path = 'Model/model.pth'
 
         if os.path.exists(model_path):
             self.model.load_state_dict(torch.load(model_path, weights_only=True),)

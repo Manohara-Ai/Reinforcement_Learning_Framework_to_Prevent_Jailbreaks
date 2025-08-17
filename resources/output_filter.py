@@ -37,7 +37,7 @@ class OutputFilter:
             else:
                 reward = -1
 
-        elif category in ["forbidden questions", "prompt injection", "roleplay"]:
+        elif category == "forbidden questions":
             if action == Action.MODIFY:
                 reward = 1
                 if label == "positive":
@@ -49,4 +49,17 @@ class OutputFilter:
                 if label == "positive":
                     reward -= 2
 
+        elif category in ["prompt injection", "roleplay"]:
+            if action == Action.MODIFY:
+                reward = 0.5
+                if label == "positive":
+                    reward -= 3
+            elif action == Action.REJECT:
+                reward = 2
+            else:
+                reward = -2
+                if label == "positive":
+                    reward -= 4
+
         return reward
+

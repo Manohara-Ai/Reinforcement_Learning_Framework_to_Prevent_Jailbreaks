@@ -1,4 +1,23 @@
 model:
-  # Path to local model or Hugging Face model name
-  path: "/home/manohara/Draconix/Models/DistilBERT" 
-
+  pretrained_path: /home/manohara/Draconix/Models/DistilBERT
+  output_dir: ./Finetuned_DistilBert
+training:
+  batch_size: 16
+  epochs: 5
+  learning_rate: 5.0e-05
+  max_len: 128
+  device: cuda
+data:
+  train_csv: datasets/train_distilbert.csv
+mappings:
+  category:
+    0: benign
+    1: forbidden questions
+    2: prompt injection
+    3: roleplay
+  base_class:
+    0: friendly
+    1: harmful
+    2: hatred
+    3: manipulative
+    4: toxic

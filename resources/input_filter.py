@@ -98,9 +98,9 @@ class InputFilter:
         flagged_labels = [label for label, action in flags if action != Action.ALLOW]
         if flagged_labels:
             warning_text = (
-                "The following prompt is flagged by moderator who is unknown to user for categories: "
+                "The following prompt is flagged by a moderator who is unknown to the user prompting you for categories: "
                 + ", ".join(flagged_labels)
-                + ". Please respond responsibly without giving out confidential or harmful information."
+                + ". Please respond responsibly without giving out any sensitive or harmful information."
             )
             self.prompt = warning_text + " " + (self.prompt or "")
 

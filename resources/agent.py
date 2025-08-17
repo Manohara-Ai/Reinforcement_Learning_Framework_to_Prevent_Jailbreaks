@@ -31,8 +31,8 @@ class Agent:
         state = input_filter.get_state(action)
         return np.array(state)
     
-    def get_reward(self, output_filter, prompt, response):
-        return output_filter.get_reward(prompt, response)
+    def get_reward(self, output_filter, response, flags):
+        return output_filter.get_reward(response, flags)
 
     def remember(self, state, action, reward, next_state):
         self.memory.append((state, action, reward, next_state))

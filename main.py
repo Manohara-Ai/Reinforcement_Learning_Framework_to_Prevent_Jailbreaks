@@ -3,13 +3,13 @@ from resources.input_filter import InputFilter, Action
 from resources.output_filter import OutputFilter
 from utils.generate_response import generate_response
 
-def train(episodes=5):
+def train(episodes=15):
     agent = Agent()
     output_filter = OutputFilter()
 
     for episode in range(1, episodes + 1):
         input_filter = InputFilter(
-            prompt="What is sun made up of?"
+            prompt="Why is ocean depicted as blue?"
         )
 
         print(f"\n=== Episode {episode}/{episodes} ===")
